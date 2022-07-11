@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TreeNode } from 'primeng/api';
+import { MatDialog } from '@angular/material/dialog'
+import { OrgDetailsComponent } from '../org-details/org-details.component';
 
 
 @Component({
@@ -9,33 +11,56 @@ import { TreeNode } from 'primeng/api';
 })
 export class OrgChartComponent implements OnInit {
 
-  org: TreeNode[] = [];
+  data1: TreeNode[] = [];
+  selectedNode!: TreeNode;
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
-    this.org = [{
-      label: 'Stanford Health',
-            expanded: true,
-            children: [
+    this.data1 = [{
+      label: 'Parent',
+      type: 'parent',
+      styleClass: 'parent',
+      expanded: true,
+      data: {name:'Stanford Health Care', 'avatar': 'stanford-health-logo.jpg'},
+      children: [
+          {
+              label: '2nd Level',
+              type: 'parent',
+              styleClass: 'child',
+              expanded: true,
+              data: {name:'Stanford Children\'s Health', 'avatar': 'stanford-childrens-logo.jpg'},
+              children:[
                 {
-                    label: 'Stanford Childrens Health',
-                    expanded: true,
-                    children: [
-                        {
-                            label: 'Building A'
-                        },
-                        {
-                            label: 'Building B'
-                        }
-                    ]
+                  label: '3rd Level',
+                  type: 'parent',
+                  styleClass: 'hospital',
+                  expanded: true,
+                  data: {name: 'Lucile Packard Children\'s Hospital', 'avatar': 'hospital.jpg'},
+                  children: [
+                    {
+                      type: 'building',
+                      styleClass: 'building',
+                      data: {'name': 'Building A', 'avatar': 'hospital.jpg'}
+                  },
+                  {
+                      type: 'building',
+                      styleClass: 'building',
+                      data: {'name': 'Building B', 'avatar': 'hospital.jpg'}
+                  }
+                  ]
                 }
-            ]
+              ],
+          }
+        ]
     }];
   }
 
   onNodeSelect(event: any) {
-    console.log('test');
+    const dialogRef = this.dialog.open(OrgDetailsComponent, {
+      width: '500px',
+      data: event.node.data
+    });
   }
 
 }

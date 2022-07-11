@@ -9,17 +9,22 @@ import { OrgChartComponent } from './components/org-chart/org-chart.component';
 import { OrganizationChartModule } from 'primeng/organizationchart';
 import { PanelModule } from 'primeng/panel';
 
+import { MatDialogModule } from '@angular/material/dialog';
+import { OrgDetailsComponent } from './components/org-details/org-details.component';
+
 @NgModule({
   declarations: [
     AppComponent,
-    OrgChartComponent
+    OrgChartComponent,
+    OrgDetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     OrganizationChartModule,
-    PanelModule
+    PanelModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

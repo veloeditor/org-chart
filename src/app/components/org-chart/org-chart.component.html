@@ -1,3 +1,17 @@
 <div class="container">
-    <p-organizationChart [value]="org"></p-organizationChart>
+    <p-organizationChart [value]="data1" selectionMode="single" [(selection)]="selectedNode" (onNodeSelect)="onNodeSelect($event)"
+    styleClass="company">
+        <ng-template let-node pTemplate="parent">
+            <div class="node-content">
+                <img src="../../../assets/{{node.data.avatar}}">
+                <div>{{node.data.name}}</div>
+            </div>
+        </ng-template>
+        <ng-template let-node pTemplate="building">
+            <div class="child-node">
+                <img src="../../../assets/{{node.data.avatar}}">
+                <div>{{node.data.name}}</div>
+            </div>
+        </ng-template>
+    </p-organizationChart>
 </div>

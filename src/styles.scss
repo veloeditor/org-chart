@@ -79,10 +79,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .p-organizationchart-node-content {
-    border: 1px solid #dee2e6;
+    border: 1px solid #013468;
     background: #ffffff;
     color: #495057;
     padding: 1rem;
+    width: 250px;
+    border-radius: 9px;
 }
 
 .p-organizationchart-node-content .p-node-toggler {
@@ -106,3 +108,66 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     border-color: #dee2e6;
 }
 
+.node-content, p.p-organizationchart-node-content {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ height: 100%;
+}
+
+.parent {
+    width: 290px;
+    background-color: #e4e4e4;
+    font-size: 16px;
+    font-weight: 800;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    img {
+        mix-blend-mode: multiply;
+    }
+}
+
+.child {
+    background-color: #e4e4e4;
+    width: 290px;
+    font-size: 16px;
+    font-weight: 800;
+    padding: 10px;
+
+    img {
+        mix-blend-mode: multiply;
+    }
+}
+
+.child-node {
+    display: flex;
+    flex-direction: column;
+}
+
+.hospital {
+    width: 290px;
+    font-size: 16px;
+    font-weight: 800;
+    padding: 5px;
+    img {
+        max-width: 120px;
+    }
+}
+
+.building {
+    background-color: #e2e2e2;
+    width: 150px;
+    height: 106px;
+    padding: 0;
+
+    font-weight: 700;
+
+    img {
+        width: 100%;
+        border-top-right-radius: 9px;
+        border-top-left-radius: 9px;
+    }
+}
