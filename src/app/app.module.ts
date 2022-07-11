@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OrgChartComponent } from './components/org-chart/org-chart.component';
 
+import { OrganizationChartModule } from 'primeng/organizationchart';
+import { PanelModule } from 'primeng/panel';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,7 +17,9 @@ import { OrgChartComponent } from './components/org-chart/org-chart.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    OrganizationChartModule,
+    PanelModule
   ],
   providers: [],
   bootstrap: [AppComponent]
