@@ -22,41 +22,53 @@ export class OrgChartComponent implements OnInit {
       type: 'parent',
       styleClass: 'parent',
       expanded: true,
-      data: {name:'Stanford Health Care', 'avatar': 'stanford-health-logo.jpg'},
+      data: { name: 'Stanford Health Care', 'avatar': 'stanford-health-logo.jpg' },
       children: [
-          {
-              label: '2nd Level',
+        {
+          label: '2nd Level',
+          type: 'parent',
+          styleClass: 'child',
+          expanded: true,
+          data: { name: 'Stanford Children\'s Health', 'avatar': 'stanford-childrens-logo.jpg' },
+          children: [
+            {
+              label: '3rd Level',
               type: 'parent',
-              styleClass: 'child',
+              styleClass: 'hospital',
               expanded: true,
-              data: {name:'Stanford Children\'s Health', 'avatar': 'stanford-childrens-logo.jpg'},
-              children:[
+              data: { name: 'Lucile Packard Children\'s Hospital', 'avatar': 'hospital.jpg' },
+              children: [
                 {
-                  label: '3rd Level',
-                  type: 'parent',
-                  styleClass: 'hospital',
-                  expanded: true,
-                  data: {name: 'Lucile Packard Children\'s Hospital', 'avatar': 'hospital.jpg'},
-                  children: [
-                    {
-                      type: 'building',
-                      styleClass: 'building',
-                      data: {'name': 'Building A', 'avatar': 'hospital.jpg'}
-                  },
-                  {
-                      type: 'building',
-                      styleClass: 'building',
-                      data: {'name': 'Building B', 'avatar': 'hospital.jpg'}
-                  }
-                  ]
+                  type: 'building',
+                  styleClass: 'building',
+                  data: { 'name': 'Building West', 'avatar': 'hospital.jpg' }
+                },
+                {
+                  type: 'building',
+                  styleClass: 'building',
+                  data: { 'name': 'Building Central', 'avatar': 'hospital.jpg' }
+                },
+                {
+                  type: 'building',
+                  styleClass: 'building',
+                  data: { 'name': 'Building South', 'avatar': 'hospital.jpg' }
                 }
-              ],
-          }
-        ]
+              ]
+            }, {
+              label: '3rd Level',
+              type: 'parent',
+              styleClass: 'hospital',
+              expanded: true,
+              data: { name: 'Some Other Hospital', 'avatar': 'hospital2.jpg' }
+            }
+          ],
+        }
+      ]
     }];
   }
 
   onNodeSelect(event: any) {
+    console.log(event);
     const dialogRef = this.dialog.open(OrgDetailsComponent, {
       width: '500px',
       data: event.node.data

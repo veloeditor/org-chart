@@ -1,11 +1,3 @@
 export interface OrgChartDataObject {
-    label: string,
-    type: string,
-    styleClass: string,
-    expanded: boolean,
-    data: {
-        name: string;
-        avatar: string;
-    },
-    key: string
+    // define the data object that's inside the TreeNode here that matches our data for buildings/orgs/hospitals from the api
 }

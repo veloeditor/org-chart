@@ -1,4 +1,5 @@
 <div class="container">
+    <h2>Stanford Health Organization Chart</h2>
     <p-organizationChart [value]="data1" selectionMode="single" [(selection)]="selectedNode" (onNodeSelect)="onNodeSelect($event)"
     styleClass="company">
         <ng-template let-node pTemplate="parent">

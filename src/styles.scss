@@ -67,19 +67,19 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .p-organizationchart .p-organizationchart-line-top {
-    border-top: 1px solid #dee2e6;
-    border-color: #dee2e6;
+    border-top: 1px solid #a1a1a1;
+    border-color: #a1a1a1;
 }
 
 .p-organizationchart .p-organizationchart-line-down {
-    background: #dee2e6;
+    background: #a1a1a1;
     margin: 0 auto;
     height: 20px;
     width: 1px;
 }
 
 .p-organizationchart-node-content {
-    border: 1px solid #013468;
+    border: 1px solid #a1a1a1;
     background: #ffffff;
     color: #495057;
     padding: 1rem;
@@ -104,8 +104,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .p-organizationchart .p-organizationchart-line-left {
-    border-right: 1px solid #dee2e6;
-    border-color: #dee2e6;
+    border-right: 1px solid #a1a1a1;
+    border-color: #a1a1a1;
 }
 
 .node-content, p.p-organizationchart-node-content {
@@ -169,5 +169,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
         width: 100%;
         border-top-right-radius: 9px;
         border-top-left-radius: 9px;
+        padding-bottom: 2px;
     }
 }

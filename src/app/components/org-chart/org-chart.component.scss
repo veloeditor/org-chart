@@ -1,10 +1,15 @@
 .container {
-    // margin-top: 10px;
     padding-top: 25px;
     padding-bottom: 25px;
     background-color: #00496C;
     margin-left: auto;
     margin-right: auto;
+
+    h2 {
+        color: #e7e7e7;
+        text-align: center;
+        padding-bottom: 15px;
+    }
 }
 
 .parent {
